@@ -1,0 +1,17 @@
+{
+  "development": {
+    "firebase": "https://d16a-tut.firebaseio.com/development/",
+    "storage": "../db/db.sqlite3",
+    "dialect": "sqlite"
+  },
+  "test": {
+    "firebase": "https://d16a-tut.firebaseio.com/test/",
+    "storage": "../db/db.sqlite3",
+    "dialect": "sqlite"
+  },
+  "production": {
+    "firebase": "https://d16a-tut.firebaseio.com/production/",
+    "storage": "../db/db.sqlite3",
+    "dialect": "sqlite"
+  }
+}
