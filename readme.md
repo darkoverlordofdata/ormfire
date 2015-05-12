@@ -2,8 +2,15 @@
 
 Eric, the half a orm
 
+Use sequelize interface to work with firebase
+
+1) require('eric')
+2) Add firebase property to ./db/config/config.json
+3) Create ./db/models.coffee to override ./db/models/index.coffee
 
 
+Models with an autoincrement id field are written to database using push
+Other models use update to write to the database.
 
 # MIT License
 
