@@ -1,19 +1,25 @@
 ###
+
+     ___  ____   ____   __
+    /  _]|    \ |    | /  ]
+   /  [_ |  D  ) |  | /  /
+  |    _]|    /  |  |/  /
+  |   [_ |    \  |  /   \_
+  |     ||  .  \ |  \     |
+  |_____||__|\_||____\____|
+
   Eric, the half a Orm
 
-  Use sequelize interface and metadata to provide
-  a half a orm for Firebase
+  Use sequelize interface and metadata
+  to provide a half a orm for Firebase
 
   Intercept references to ./db/models/index.coffee
   Instead, we invoke ./db/models.coffee
 
 ###
-ready = null
-
 fs = require('fs')
 path = require('path')
 Sequelize = require('./Sequelize')
-
 
 module.exports = (dirname, token) ->
   sequelize: null
@@ -30,8 +36,6 @@ module.exports = (dirname, token) ->
       (file.indexOf(".") isnt 0) and (file isnt 'index.coffee') and (file isnt 'index.js')
     ).forEach (file) =>
       model = @sequelize["import"](path.join(dirname, 'models', file))
-      console.log '================'
-      console.log 'import '+model.name
       @[model.name] = model
       return
     return this

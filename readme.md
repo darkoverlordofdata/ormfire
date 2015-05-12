@@ -1,6 +1,15 @@
 # eric
 
-Eric, the half a orm
+           ___  ____   ____   __     
+          /  _]|    \ |    | /  ]    
+         /  [_ |  D  ) |  | /  /     
+        |    _]|    /  |  |/  /      
+        |   [_ |    \  |  /   \_     
+        |     ||  .  \ |  \     |    
+        |_____||__|\_||____\____|    
+                                     
+
+        Eric, the half a orm
 
 Use sequelize interface to work with firebase
 
