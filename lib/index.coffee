@@ -8,7 +8,7 @@
   |     ||  .  \ |  \     |
   |_____||__|\_||____\____|
 
-  Eric, the half a Orm
+  Eric, the Half a Orm
 
   Use sequelize interface and metadata
   to provide a half a orm for Firebase

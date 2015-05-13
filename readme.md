@@ -9,10 +9,11 @@
         |_____||__|\_||____\____|    
                                      
 
-        Eric, the half a orm
+        Eric, The half a orm
 
 Use sequelize interface to work with firebase
 
+* Use sequelize to create your scaffolds
 + require('eric')
 + Add firebase property to ./db/config/config.json
 + Create ./db/models.coffee to override ./db/models/index.coffee
