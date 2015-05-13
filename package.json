@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Eric the half a orm",
   "main": "lib/index",
+  "bin": "./bin/eric",
   "scripts": {
     "start": "node ./example/index"
   },
