@@ -1,0 +1,18 @@
+#!/usr/bin/env coffee
+cmd = require("./lib/cmd")
+
+usage = """
+Usage:
+  eric migrate [up|down]
+"""
+
+switch process.argv[2]
+
+  when 'migrate' then cmd.migrate(process.argv[3])
+
+  when '--help' then console.log usage
+
+  when '-h' then console.log usage
+
+  else console.log usage
+

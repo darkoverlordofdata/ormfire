@@ -21,6 +21,7 @@ Use sequelize interface to work with firebase
 Models with an autoincrement id field are written to database using push
 Other models use update to write to the database.
 
+
 # MIT License
 
 Copyright (c) 2015 Bruce Davidson &lt;darkoverlordofdata@gmail.com&gt;

@@ -1,11 +1,11 @@
 "use strict"
 module.exports =
-  up: (queryInterface, Sequelize) ->
+  up: (queryInterface, Sequelize, done) ->
 
     Games = require('../models').Game
 
     Games.sync().then ->
-      Games.create
+      Games.create(
         active: 1
         name: 'Asteroid Simulator'
         slug: 'asteroids'
@@ -21,5 +21,7 @@ module.exports =
         main: 'asteroids.html'
         height: 600
         width: 800
+      ).then ->
+        done()
 
-  down: (queryInterface, Sequelize) ->
+  down: (queryInterface, Sequelize, done) ->

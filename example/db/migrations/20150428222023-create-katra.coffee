@@ -1,7 +1,7 @@
 "use strict"
 module.exports =
-  up: (queryInterface, Sequelize) ->
-    queryInterface.createTable "Katras",
+  up: (queryInterface, Sequelize, done) ->
+    queryInterface.createTable("Katras",
       id:
         allowNull: false
         autoIncrement: true
@@ -33,7 +33,9 @@ module.exports =
       updatedAt:
         allowNull: false
         type: Sequelize.DATE
+    ).then ->
+      done()
 
 
-  down: (queryInterface, Sequelize) ->
+  down: (queryInterface, Sequelize, down) ->
     queryInterface.dropTable "Katras"

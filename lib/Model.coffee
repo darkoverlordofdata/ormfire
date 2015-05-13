@@ -5,25 +5,31 @@ inflection = require('inflection')
 
 module.exports = class Model
 
+  ###
+   * A Model represents a table in the database.
+   *
+  ###
   constructor: (@sequelize, @name, @attrs) ->
-    @data = new Firebase(@sequelize.config.firebase+"data/"+@name)
+    @data = new Firebase(@sequelize.uri+"data/"+@name)
     @data.authWithCustomToken @sequelize.token, (err, auth) =>
       console.log err if err
 
-  # Sync
-  # return a promise
+  ###
+   * Sync this Model to the DB.
+  ###
   sync: () =>
     return new Promise((resolve, reject) ->
       resolve(null)
     )
 
-  # Create an instance of the model
-  # return a promise
+  ###
+   * Builds a new model instance and calls save on it.
+  ###
   create: (attrs) =>
     return new Promise((resolve, reject) =>
 
       console.log 'create'
-      if @sequelize.def[inflection.pluralize(@name)].id.autoIncrement
+      if @sequelize.def.ddic[inflection.pluralize(@name)].id.autoIncrement
         # using push
         console.log 'push'
         @data.push(attrs)
@@ -39,19 +45,36 @@ module.exports = class Model
       resolve(null)
     )
 
-  # Find a record
-  # return a promise
+  ###
+   * Search for a single instance. This applies LIMIT 1, so the listener will
+   * always be called with a single instance.
+  ###
   find: (options={}) =>
+    return new Promise((resolve, reject) =>
+      resolve(null)
+    )
 
-  # Find several records
-  # return a promise
+  ###
+   * Search for multiple instances.
+  ###
   findAll: (options={}) =>
+    return new Promise((resolve, reject) =>
+      resolve(null)
+    )
 
-  # update a record
-  # return a promise
+  ###
+   * Update multiple instances that match the where options.
+  ###
   update: (options={}) =>
+    return new Promise((resolve, reject) =>
+      resolve(null)
+    )
 
-  # delete a record
-  # return a promise
+  ###
+   * Delete multiple instances,
+  ###
   destroy: (options={}) =>
+    return new Promise((resolve, reject) =>
+      resolve(null)
+    )
 
