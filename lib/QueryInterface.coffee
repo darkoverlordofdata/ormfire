@@ -1,3 +1,9 @@
+###
+ *
+ * QueryInterface
+ *
+###
+
 Promise = require('promise')
 
 module.exports = class QueryInterface
@@ -16,8 +22,7 @@ module.exports = class QueryInterface
         field.type = field.type.key
         field.index = index++
       def[name] = attrs
-#      @sequelize.ddic.update(def)
-      @sequelize.ddic.child('ddic').update(def)
+      @sequelize.ref.child('system/ddic').update(def)
       resolve(null)
     )
 
@@ -25,8 +30,7 @@ module.exports = class QueryInterface
     return new Promise((resolve, reject) =>
       def = {}
       def[name] = {}
-#      @sequelize.ddic.update(def)
-      @sequelize.ddic.child('ddic').update(def)
+      @sequelize.ref.child('system/ddic').update(def)
       resolve(null)
     )
 

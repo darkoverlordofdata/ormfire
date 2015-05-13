@@ -1,3 +1,8 @@
+###
+ *
+ * Model
+ *
+###
 
 Firebase = require('firebase')
 Promise = require('promise')
@@ -5,21 +10,35 @@ inflection = require('inflection')
 
 module.exports = class Model
 
+  txn   : false # Transactional or Master data?
+  db    : null
+
   ###
    * A Model represents a table in the database.
    *
   ###
   constructor: (@sequelize, @name, @attrs) ->
-    @data = new Firebase(@sequelize.uri+"data/"+@name)
-    @data.authWithCustomToken @sequelize.token, (err, auth) =>
-      console.log err if err
+    @db = @sequelize.ref.child('data/'+@name)
+
+
+  getTableName: => @name
+
+  drop: (options) =>
+    return new Promise((resolve, reject) =>
+      @sequelize.ref.child('system/ddic/'+inflection.pluralize(@name)).remove((err) =>
+        if (err) then reject(err) else resolve(null)
+      )
+    )
 
   ###
    * Sync this Model to the DB.
   ###
   sync: () =>
-    return new Promise((resolve, reject) ->
-      resolve(null)
+    return new Promise((resolve, reject) =>
+      @sequelize.ref.child('system/ddic/'+inflection.pluralize(@name)+'/id/autoIncrement')
+      .once 'value', (snapshot) =>
+        @txn = snapshot.val()
+        resolve(null)
     )
 
   ###
@@ -28,19 +47,15 @@ module.exports = class Model
   create: (attrs) =>
     return new Promise((resolve, reject) =>
 
-      console.log 'create'
-      if @sequelize.def.ddic[inflection.pluralize(@name)].id.autoIncrement
-        # using push
-        console.log 'push'
-        @data.push(attrs)
+      if @txn or not attrs.id?
+        # Firebase will assign a unique, sequential, key
+        @db.push(attrs)
 
       else
-        # using update
-        console.log 'update'
+        # Use the id as the key
         rec = {}
         rec[attrs.id] = attrs
-        @data.update(rec)
-
+        @db.update(rec)
 
       resolve(null)
     )
@@ -50,31 +65,66 @@ module.exports = class Model
    * always be called with a single instance.
   ###
   find: (options={}) =>
+    # decode options
+
+    where = options.where
+    if where?
+      field = Object.keys(where)[0]
+      value = where[field]
+
     return new Promise((resolve, reject) =>
-      resolve(null)
+      exec = if where? then @db.orderByChild(field).equalTo(value).limitToFirst(1) else @db.limitToFirst(1)
+      exec.once 'value', (snapshot) ->
+        resolve(snapshot.val())
     )
 
   ###
    * Search for multiple instances.
   ###
   findAll: (options={}) =>
+
+    where = options.where
+    if where?
+      field = Object.keys(where)[0]
+      value = where[field]
+
     return new Promise((resolve, reject) =>
-      resolve(null)
+      exec = if where? then @db.orderByChild(field).equalTo(value) else @db
+      exec = if options.limit? then exec.limitToFirst(options.limit) else exec
+      exec.once 'value', (snapshot) ->
+        resolve(snapshot.val())
     )
 
   ###
-   * Update multiple instances that match the where options.
+   * Update instance that match the where options.
   ###
-  update: (options={}) =>
+  update: (value, options={}) =>
+    where = options.where
+    if where?
+      field = Object.keys(where)[0]
+      value = where[field]
+
     return new Promise((resolve, reject) =>
-      resolve(null)
+      exec = if where? then @db.orderByChild(field).equalTo(value).limitToFirst(1) else @db.limitToFirst(1)
+      exec.once 'value', (snapshot) ->
+        snapshot.ref().update(value)
+        resolve(null)
     )
 
   ###
    * Delete multiple instances,
   ###
   destroy: (options={}) =>
+
+    where = options.where
+    if where?
+      field = Object.keys(where)[0]
+      value = where[field]
+
     return new Promise((resolve, reject) =>
-      resolve(null)
+      exec = if where? then @db.orderByChild(field).equalTo(value).limitToFirst(1) else @db.limitToFirst(1)
+      exec.once 'value', (snapshot) ->
+        snapshot.ref().remove()
+        resolve(null)
     )
 

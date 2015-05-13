@@ -2,22 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3662648b-d2e5-42ef-b707-38356fdd657d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/Migrator.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/lib/cmd.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/eric" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/migrate.sh" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/index.coffee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/index.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/eric.coffee" afterPath="$PROJECT_DIR$/lib/index.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example/db/migrations/20150428222013-create-game.coffee" afterPath="$PROJECT_DIR$/example/db/migrations/20150428222013-create-game.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example/db/migrations/20150428222023-create-katra.coffee" afterPath="$PROJECT_DIR$/example/db/migrations/20150428222023-create-katra.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example/db/migrations/20150428233702-populate-game.coffee" afterPath="$PROJECT_DIR$/example/db/migrations/20150428233702-populate-game.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example/db/migrations/20150428234520-populate-katra.coffee" afterPath="$PROJECT_DIR$/example/db/migrations/20150428234520-populate-katra.coffee" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/index.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Migrator.coffee" afterPath="$PROJECT_DIR$/lib/Migrator.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Model.coffee" afterPath="$PROJECT_DIR$/lib/Model.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/QueryInterface.coffee" afterPath="$PROJECT_DIR$/lib/QueryInterface.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Sequelize.coffee" afterPath="$PROJECT_DIR$/lib/Sequelize.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example/db/models.coffee" afterPath="$PROJECT_DIR$/example/db/models.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.md" afterPath="$PROJECT_DIR$/readme.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="template.iws" />
@@ -39,31 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.coffee" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/index.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cmd.coffee" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/lib/cmd.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="QueryInterface.coffee" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/QueryInterface.coffee">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+              <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -73,17 +42,17 @@
         <entry file="file://$PROJECT_DIR$/lib/Sequelize.coffee">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+              <caret line="55" column="29" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Migrator.coffee" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/Migrator.coffee">
+      <file leaf-file-name="index.coffee" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/index.coffee">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -92,8 +61,18 @@
       <file leaf-file-name="Model.coffee" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/Model.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.472">
-              <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+            <state vertical-scroll-proportion="1.056">
+              <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.coffee" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/index.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -112,21 +91,21 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/example.js" />
         <option value="$PROJECT_DIR$/example/index.js" />
-        <option value="$PROJECT_DIR$/example/index.coffee" />
         <option value="$PROJECT_DIR$/lib/eric.coffee" />
         <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/bin/eric" />
-        <option value="$PROJECT_DIR$/example/db/models.coffee" />
         <option value="$PROJECT_DIR$/example/db/migrations/20150428234520-populate-katra.coffee" />
         <option value="$PROJECT_DIR$/example/db/migrations/20150428233702-populate-game.coffee" />
         <option value="$PROJECT_DIR$/example/db/migrations/20150428222013-create-game.coffee" />
         <option value="$PROJECT_DIR$/example/db/migrations/20150428222023-create-katra.coffee" />
-        <option value="$PROJECT_DIR$/lib/Sequelize.coffee" />
         <option value="$PROJECT_DIR$/example/migrate.sh" />
         <option value="$PROJECT_DIR$/bin/lib/cmd.coffee" />
         <option value="$PROJECT_DIR$/lib/index.coffee" />
-        <option value="$PROJECT_DIR$/lib/Migrator.coffee" />
         <option value="$PROJECT_DIR$/lib/QueryInterface.coffee" />
+        <option value="$PROJECT_DIR$/lib/Migrator.coffee" />
+        <option value="$PROJECT_DIR$/example/db/models.coffee" />
+        <option value="$PROJECT_DIR$/example/index.coffee" />
+        <option value="$PROJECT_DIR$/lib/Sequelize.coffee" />
         <option value="$PROJECT_DIR$/lib/Model.coffee" />
       </list>
     </option>
@@ -353,6 +332,9 @@
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="3662648b-d2e5-42ef-b707-38356fdd657d" name="Default" comment="" />
@@ -378,7 +360,13 @@
       <option name="project" value="LOCAL" />
       <updated>1431471042039</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="daily">
+      <created>1431498010112</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1431498010112</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -405,6 +393,14 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -517,24 +513,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/example/db/models.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09424084">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/migrate.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.144">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/eric">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2513089">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/lib/cmd.coffee">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.12565444">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Migrator.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.4764398">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/db/migrations/20150428233702-populate-game.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/migrate.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09424084">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -542,23 +562,7 @@
     <entry file="file://$PROJECT_DIR$/lib/index.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/lib/cmd.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Migrator.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -566,7 +570,15 @@
     <entry file="file://$PROJECT_DIR$/lib/QueryInterface.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/index.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -574,15 +586,15 @@
     <entry file="file://$PROJECT_DIR$/lib/Sequelize.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <caret line="55" column="29" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/Model.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.472">
-          <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+        <state vertical-scroll-proportion="1.056">
+          <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
           <folding />
         </state>
       </provider>

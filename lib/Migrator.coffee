@@ -1,3 +1,9 @@
+###
+ *
+ * Migrator
+ *
+###
+
 fs = require('fs')
 path = require('path')
 Sequelize = require('./Sequelize')
@@ -18,7 +24,7 @@ module.exports = class Migrator
     ).forEach (file) =>
       ext = path.extname(file)
       file = path.basename(file, ext)
-      @sequelize.ddic.child('sequelizemeta/'+file)
+      @sequelize.ref.child('system/sequelizemeta/'+file)
       .once 'value', (data) =>
         if not data.exists()
           #
@@ -29,7 +35,7 @@ module.exports = class Migrator
 
             def = {}
             def[file] = method
-            @sequelize.ddic.child('sequelizemeta').update(def)
+            @sequelize.ref.child('system/sequelizemeta').update(def)
 
 
 
