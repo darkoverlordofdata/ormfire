@@ -79,10 +79,7 @@ module.exports = class Sequelize
    * Returns an instance (singleton) of Migrator.
   ###
   getMigrator: (options, force) =>
-    if force
-      @migrator = new Migrator(this, options)
-    else
-      @migrator = @migrator ? new Migrator(this, options)
+    @migrator = if force then new Migrator(this, options) else @migrator ? new Migrator(this, options)
 
   ###
    * Returns an instance of QueryInterface.
