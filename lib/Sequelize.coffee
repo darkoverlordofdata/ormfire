@@ -23,8 +23,6 @@ module.exports = class Sequelize
   token           : ''    # custom auth token
   system          : null  # system data
   ref             : null  # reference to firebase root
-
-
   ###
    * Instantiate sequelize with an URI
    * @name Sequelize
@@ -44,11 +42,6 @@ module.exports = class Sequelize
         throw err
       else
         next(@getQueryInterface(), DataTypes)
-
-    @ref.child('system').on 'value', (snapshot) =>
-      # keep the system data refreshed
-      @system = snapshot.val()
-      return
 
   getDialiect: => 'firebase'
 
