@@ -22,7 +22,7 @@ path = require('path')
 Sequelize = require('./Sequelize')
 
 module.exports = (dirname, token) ->
-  init: (callback) ->
+  init: (callback=->) ->
     env = process.env.NODE_ENV or "development"
     config_file = path.join(dirname, "config/config.json")
     config = require(config_file)[env]

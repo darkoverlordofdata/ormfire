@@ -64,7 +64,7 @@ module.exports = class Model
    * Search for a single instance. This applies LIMIT 1, so the listener will
    * always be called with a single instance.
   ###
-  find: (options={}, unbox) =>
+  find: (options={}, raw) =>
     # decode options
 
     if options is true
@@ -79,7 +79,7 @@ module.exports = class Model
     return new Promise((resolve, reject) =>
       exec = if where? then @db.orderByChild(field).equalTo(value).limitToFirst(1) else @db.limitToFirst(1)
       exec.once 'value', (snapshot) =>
-        if unbox and @txn
+        if unbox # and @txn
           data = snapshot.val()
           resolve(data[Object.keys(data)[0]])
         else
@@ -89,7 +89,7 @@ module.exports = class Model
   ###
    * Search for multiple instances.
   ###
-  findAll: (options={}, unbox) =>
+  findAll: (options={}, raw) =>
 
     if options is true
       options = {}
@@ -104,7 +104,7 @@ module.exports = class Model
       exec = if where? then @db.orderByChild(field).equalTo(value) else @db
       exec = if options.limit? then exec.limitToFirst(options.limit) else exec
       exec.once 'value', (snapshot) =>
-        if unbox and @txn
+        if unbox # and @txn
           resolve((val for key, val of snapshot.val()))
         else
           resolve(snapshot.val())
