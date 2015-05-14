@@ -8,7 +8,7 @@
     "start": "node ./example/index"
   },
   "author": "darkoverlordofdata",
-  "repository": "git://github.com/darkoverlordofdata/orm-fire",
+  "repository": "git://github.com/darkoverlordofdata/ormfire",
   "license": "MIT",
   "devDependencies": {
     "browserify": "~6.2.0",

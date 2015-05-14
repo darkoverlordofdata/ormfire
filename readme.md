@@ -1,20 +1,21 @@
-# eric
-
-           ___  ____   ____   __     
-          /  _]|    \ |    | /  ]    
-         /  [_ |  D  ) |  | /  /     
-        |    _]|    /  |  |/  /      
-        |   [_ |    \  |  /   \_     
-        |     ||  .  \ |  \     |    
-        |_____||__|\_||____\____|    
-                                     
-
-        Eric, The half a orm
+# ormfire
+        
+            )              (                 
+         ( /(              )\ )              
+         )\()) (      )   (()/( (  (     (   
+        ((_)\  )(    (     /(_)))\ )(   ))\  
+          ((_)(()\   )\  '(_))_((_|()\ /((_) 
+         / _ \ ((_)_((_)) | |_  (_)((_|_))   
+        | (_) | '_| '  \()| __| | | '_/ -_)  
+         \___/|_| |_|_|_| |_|   |_|_| \___|  
+                                             
+        
+        
 
 Use sequelize interface to work with firebase
 
 * Use sequelize to create your scaffolds
-+ require('eric')
++ require('ormfire')
 + Add firebase property to ./db/config/config.json
 + Create ./db/models.coffee to override ./db/models/index.coffee
 
