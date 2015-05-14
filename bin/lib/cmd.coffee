@@ -9,7 +9,7 @@ module.exports =
     migrations = path.resolve(process.cwd(), './db/migrations')
     db = require(models)
     db.init (queryInterface, Sequelize) ->
-      console.log 'eric v'+require('../../package.json').version
+      console.log 'ormfire v'+require('../../package.json').version
       console.log ''
       console.log 'Environment: '+queryInterface.sequelize.options.env
 
