@@ -17,8 +17,6 @@ Use sequelize interface to work with firebase
 * Use sequelize file structure and models
 + Add firebase property to ./config/config.json
 + export FIREBASE_AUTH=<auth token>
-+ Migrate data
-+ require('ormfire')
 
 Models with an autoincrement id field are written to database using push
 Other models use update to write to the database.
