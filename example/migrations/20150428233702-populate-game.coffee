@@ -2,7 +2,7 @@
 module.exports =
   up: (queryInterface, Sequelize, done) ->
 
-    Games = require('../models').Game
+    Games = queryInterface.sequelize.models.Game
 
     Games.sync().then ->
       Games.create(

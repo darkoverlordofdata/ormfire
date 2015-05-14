@@ -14,9 +14,9 @@
 
 Use sequelize interface to work with firebase
 
-* Use sequelize to create scaffolds
-+ Add firebase property to ./db/config/config.json
-+ Create ./db/models.coffee (see example)
+* Use sequelize file structure and models
++ Add firebase property to ./config/config.json
++ export FIREBASE_AUTH=<auth token>
 + Migrate data
 + require('ormfire')
 

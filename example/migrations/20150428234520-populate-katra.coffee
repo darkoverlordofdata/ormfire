@@ -2,7 +2,7 @@
 module.exports =
   up: (queryInterface, Sequelize, done) ->
 
-    Katras = require('../models').Katra
+    Katras = queryInterface.sequelize.models.Katra
 
     Katras.sync().then ->
       Katras.create(
