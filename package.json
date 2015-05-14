@@ -1,13 +1,14 @@
 {
-  "name": "eric",
+  "name": "ormfire",
   "version": "0.0.1",
-  "description": "Eric the half a orm",
+  "description": "lite orm for firebase",
   "main": "lib/index",
-  "bin": "./bin/eric",
+  "bin": "./bin/ormfire",
   "scripts": {
     "start": "node ./example/index"
   },
   "author": "darkoverlordofdata",
+  "repository": "git://github.com/darkoverlordofdata/orm-fire",
   "license": "MIT",
   "devDependencies": {
     "browserify": "~6.2.0",

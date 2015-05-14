@@ -3,7 +3,7 @@ cmd = require("./lib/cmd")
 
 usage = """
 Usage:
-  eric migrate [up|down]
+  ormfire migrate [up|down]
 """
 
 switch process.argv[2]
