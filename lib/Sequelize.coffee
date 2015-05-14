@@ -34,9 +34,10 @@ module.exports = class Sequelize
    * @param {String} auth token
    * @paran {Function} next async
    ###
-  constructor: (@uri, @token, next) ->
+  constructor: (@uri, @options, next) ->
     @importCache = {}
     @models = {}
+    @token = @options.token
     @ref = new Firebase(@uri)
     @ref.authWithCustomToken @token, (err, auth) =>
       if err

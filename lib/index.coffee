@@ -24,8 +24,14 @@ Sequelize = require('./Sequelize')
 module.exports = (dirname, token) ->
   init: (callback) ->
     env = process.env.NODE_ENV or "development"
-    config = require(path.join(dirname, "config/config.json"))[env]
-    @sequelize = new Sequelize(config.firebase, token, callback)
+    config_file = path.join(dirname, "config/config.json")
+    config = require(config_file)[env]
+    options =
+      env: env
+      token: token
+      config_file: config_file
+
+    @sequelize = new Sequelize(config.firebase, options, callback)
     @Sequelize = Sequelize
     #
     # Load models

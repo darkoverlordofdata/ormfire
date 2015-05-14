@@ -3,5 +3,4 @@ build
 node_modules
 tmp
 packages
-example
 .idea
