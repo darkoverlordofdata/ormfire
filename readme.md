@@ -9,16 +9,16 @@
         | (_) | '_| '  \()| __| | | '_/ -_)  
          \___/|_| |_|_|_| |_|   |_|_| \___|  
                                              
-        
+                lite orm for firebase        
         
 
 Use sequelize interface to work with firebase
 
-* Use sequelize to create your scaffolds
+* Use sequelize to create scaffolds
 + require('ormfire')
 + Add firebase property to ./db/config/config.json
-+ Create ./db/models.coffee to override ./db/models/index.coffee
-
++ Create ./db/models.coffee (see example)
++ Migrate data
 
 Models with an autoincrement id field are written to database using push
 Other models use update to write to the database.
