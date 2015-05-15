@@ -19,15 +19,18 @@ module.exports = class Migrator
   migrate: (options={}, done) =>
     method = options.method or 'up'
 
-    fs.readdirSync(@path).filter((file) =>
-      @filesFilter.test(file)
-    ).forEach (file) =>
+    migrations = fs.readdirSync(@path).filter((file) => @filesFilter.test(file))
+    return done() if migrations.length is 0
+
+    migrations.forEach (file, index, array) =>
       ext = path.extname(file)
       file = path.basename(file, ext)
 
       @sequelize.ref.child('system/sequelizemeta/'+file)
       .once 'value', (data) =>
-        if not data.exists()
+        if data.exists()
+          return done() if index is array.length-1
+        else
           #
           # do the migration
           #
@@ -40,6 +43,7 @@ module.exports = class Migrator
             def = {}
             def[file] = method
             @sequelize.ref.child('system/sequelizemeta').update(def)
+            return done() if index is array.length-1
 
 
 
