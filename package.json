@@ -1,6 +1,6 @@
 {
   "name": "ormfire",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "lite orm for firebase",
   "main": "lib/index",
   "bin": "./bin/ormfire",
@@ -34,5 +34,7 @@
     "promise": "^7.0.1",
     "sequelize": "^2.1.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "yamljs": "^0.2.2"
+  }
 }

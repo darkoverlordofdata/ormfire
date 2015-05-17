@@ -19,6 +19,7 @@
 ###
 fs = require('fs')
 path = require('path')
+yaml = require('yamljs')
 Sequelize = require('./Sequelize')
 
 ###
@@ -29,10 +30,12 @@ Sequelize = require('./Sequelize')
  * @param schema    optional Blaze schema
  *
 ###
-module.exports = (dirname, token, schema={}) ->
+module.exports = (dirname, token, rules='rules.yaml') ->
   init: (callback=->) ->
-    env = process.env.NODE_ENV or "development"
+    rules = path.join(dirname, rules)
+    schema = if fs.existsSync(rules) then yaml.load(rules).schema else {}
     config_file = path.join(dirname, "config/config.json")
+    env = process.env.NODE_ENV or "development"
     config = require(config_file)[env]
     options =
       env: env
