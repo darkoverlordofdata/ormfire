@@ -89,9 +89,10 @@ module.exports = class Sequelize
   ###
   getSchema: (name, createTable=false) =>
     schema = {}
-    for name, type of @schema.properties.data.properties[name]
+
+    for name, type of @schema.properties.data.properties[name].properties
       if createTable
-        schema[name] = type: DataTypes[type.toUpperCase()]
+        schema[name] = type: DataTypes[type.type.toUpperCase()]
       else
-        schema[name] = DataTypes[type.toUpperCase()]
+        schema[name] = DataTypes[type.type.toUpperCase()]
     return schema
