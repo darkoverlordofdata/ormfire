@@ -1,6 +1,6 @@
 {
   "name": "ormfire",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "lite orm for firebase",
   "main": "lib/index",
   "bin": "./bin/ormfire",
