@@ -21,7 +21,15 @@ fs = require('fs')
 path = require('path')
 Sequelize = require('./Sequelize')
 
-module.exports = (dirname, token) ->
+###
+ * Initialize the ORM
+ *
+ * @param dirname   model folder
+ * @param token     authorization token for Firebase access
+ * @param schema    optional Blaze schema
+ *
+###
+module.exports = (dirname, token, schema={}) ->
   init: (callback=->) ->
     env = process.env.NODE_ENV or "development"
     config_file = path.join(dirname, "config/config.json")
@@ -29,6 +37,7 @@ module.exports = (dirname, token) ->
     options =
       env: env
       token: token
+      schema: schema
       config_file: config_file
 
     @sequelize = new Sequelize(config.firebase, options, callback)

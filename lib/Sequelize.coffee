@@ -23,13 +23,14 @@ module.exports = class Sequelize
   token           : ''    # custom auth token
   system          : null  # system data
   ref             : null  # reference to firebase root
+
   ###
    * Instantiate sequelize with an URI
    * @name Sequelize
    * @constructor
    *
    * @param {String} uri A full database URI
-   * @param {String} auth token
+   * @param {Object} options
    * @paran {Function} next async
    ###
   constructor: (@uri, @options, next) ->
@@ -37,6 +38,7 @@ module.exports = class Sequelize
     @models = {}
     @token = @options.token
     @ref = new Firebase(@uri)
+    @schema = @options.schema
     @ref.authWithCustomToken @token, (err, auth) =>
       if err
         throw err
@@ -80,3 +82,16 @@ module.exports = class Sequelize
   ###
   getQueryInterface: =>
     @queryInterface = @queryInterface ? new QueryInterface(this)
+
+  ###
+   * Reformat and translate the Blaze schema
+   * for use in model or createTable
+  ###
+  getSchema: (name, createTable=false) =>
+    schema = {}
+    for name, type of @schema.properties.data.properties[name]
+      if createTable
+        schema[name] = type: DataTypes[type.toUpperCase()]
+      else
+        schema[name] = DataTypes[type.toUpperCase()]
+    return schema
