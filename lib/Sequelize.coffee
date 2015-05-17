@@ -86,12 +86,24 @@ module.exports = class Sequelize
   ###
    * Reformat and translate the Blaze schema
    * for use in model or createTable
+   *
+   * @param name Model name
+   * @param createTable - undefined
+   *                    - true    transactional data
+   *                    - false   master data
   ###
-  getSchema: (name, createTable=false) =>
+  getSchema: (name, createTable) =>
     schema = {}
+    if createTable is true
+      schema =
+        id:
+          allowNull: false
+          autoIncrement: true
+          primaryKey: true
+          type: Sequelize.INTEGER
 
     for name, type of @schema.properties.data.properties[name].properties
-      if createTable
+      if createTable?
         schema[name] = type: DataTypes[type.type.toUpperCase()]
       else
         schema[name] = DataTypes[type.type.toUpperCase()]
