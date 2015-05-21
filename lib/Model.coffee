@@ -79,11 +79,14 @@ module.exports = class Model
     return new Promise((resolve, reject) =>
       exec = if where? then @db.orderByChild(field).equalTo(value).limitToFirst(1) else @db.limitToFirst(1)
       exec.once 'value', (snapshot) =>
-        if unwrap # and @txn
-          data = snapshot.val()
-          resolve(data[Object.keys(data)[0]])
+        if snapshot.val() is null
+          resolve(null)
         else
-          resolve(snapshot.val())
+          if unwrap # and @txn
+            data = snapshot.val()
+            resolve(data[Object.keys(data)[0]])
+          else
+            resolve(snapshot.val())
     )
 
   ###
@@ -104,10 +107,13 @@ module.exports = class Model
       exec = if where? then @db.orderByChild(field).equalTo(value) else @db
       exec = if options.limit? then exec.limitToFirst(options.limit) else exec
       exec.once 'value', (snapshot) =>
-        if unwrap # and @txn
-          resolve((val for key, val of snapshot.val()))
+        if snapshot.val() is null
+          resolve(null)
         else
-          resolve(snapshot.val())
+          if unwrap # and @txn
+            resolve((val for key, val of snapshot.val()))
+          else
+            resolve(snapshot.val())
     )
 
   ###
